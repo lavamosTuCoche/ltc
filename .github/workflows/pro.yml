@@ -1,0 +1,14 @@
+name: LTC PRO (Puerto 80)
+on:
+    push:
+        branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, pro]
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+
+      - name: Asegurar permisos de grupo
+        run: chmod -R 775 .

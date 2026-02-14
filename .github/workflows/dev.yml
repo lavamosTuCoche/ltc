@@ -1,0 +1,14 @@
+name: LTC DEV (Puerto 8080)
+on:
+    push:
+        branches: [ develop ]
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, dev]
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+
+      - name: Asegurar permisos de grupo
+        run: chmod -R 775 .
