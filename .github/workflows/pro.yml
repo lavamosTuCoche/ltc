@@ -1,7 +1,7 @@
 name: LTC PRO (Puerto 80)
 on:
-    push:
-        branches: [ main ]
+  push:
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: Descargar codigo
         uses: actions/checkout@v4
+
+      - name: Instalar dependencias (PHPMailer)
+        run: |
+          composer install --no-dev --optimize-autoloader --no-interaction
 
       - name: Asegurar permisos de grupo
         run: chmod -R 775 .

@@ -1,7 +1,7 @@
 name: LTC DEV (Puerto 8080)
 on:
-    push:
-        branches: [ develop ]
+  push:
+    branches: [ develop ]
 
 jobs:
   deploy:
@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: Descargar codigo
         uses: actions/checkout@v4
+
+      - name: Instalar dependencias (Modo DEV)
+        run: |
+          composer install --optimize-autoloader --no-interaction
 
       - name: Asegurar permisos de grupo
         run: chmod -R 775 .

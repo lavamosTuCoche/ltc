@@ -1,0 +1,16 @@
+# --- Dependencias de PHP (Composer) ---
+/vendor/
+
+# --- Configuración Sensible ---
+.env
+
+# --- Archivos de Sistema y Editores ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+
+# --- Archivos Temporales ---
+/tmp/
+/cache/
